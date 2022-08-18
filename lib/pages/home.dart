@@ -13,6 +13,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   final todoController = TextEditingController();
   List toDoList = [];
+  Map<String, dynamic> newToDo = {};
 
   late Map<String, dynamic> lastRemovedTask;
   late int indexRemovedTask;
@@ -104,7 +105,6 @@ class _HomeState extends State<Home> {
 
   void addTask() {
     setState(() {
-      Map<String, dynamic> newToDo = {};
       newToDo['title'] = todoController.text;
       todoController.text = "";
       newToDo['ok'] = false;
